@@ -165,6 +165,12 @@
     .hero-card { padding: 25px; background: var(--surface); border: 2px solid var(--text); box-shadow: 7px 7px 0 var(--accent); position: relative; overflow: hidden; }
     .hero-card::before { content: ""; position: absolute; width: 100px; height: 100px; top: 0; right: 0; background: repeating-conic-gradient(var(--accent-2) 0% 25%, transparent 0% 50%) 0 0 / 16px 16px; opacity: .8; pointer-events: none; }
     .card-label { position: relative; color: var(--muted); font: 700 11px var(--font-ui); letter-spacing: .14em; text-transform: uppercase; }
+    /* hero portrait */
+    .portrait { position: relative; margin: 14px 0 0; }
+    .portrait img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border: 2px solid var(--text); background: var(--surface-2); }
+    .portrait figcaption { margin-top: 10px; color: var(--muted); font: 700 11px var(--font-ui); letter-spacing: .12em; text-transform: uppercase; }
+    .sprite { position: absolute; right: 12px; bottom: 44px; width: 54px; height: 65px; background: var(--scene-sky); border: 2px solid var(--text); box-shadow: 3px 3px 0 var(--accent); shape-rendering: crispEdges; }
+    .sprite svg { display: block; width: 100%; height: 100%; }
     .terminal { margin: 18px 0 20px; padding: 14px 16px; background: var(--bg); border: 2px dashed var(--line); font: 400 13px/2 var(--font-ui); color: var(--muted); }
     .terminal .prompt { color: var(--accent); }
     .terminal .value { color: var(--text); }
@@ -304,14 +310,13 @@
           </div>
           <aside class="hero-card" aria-label="Engineering focus">
             <div class="card-label">CURRENT QUEST / ENGINEERING MODE</div>
-            <svg class="pixel-art" viewBox="0 0 280 115" role="img" aria-label="Pixel art landscape with a little adventurer exploring a mountain world" xmlns="http://www.w3.org/2000/svg">
-              <rect class="s-sky" width="280" height="115"/>
-              <g class="s-star"><rect x="18" y="14" width="8" height="8"/><rect x="34" y="30" width="8" height="8"/><rect x="250" y="18" width="8" height="8"/><rect x="226" y="38" width="8" height="8"/><rect x="200" y="14" width="8" height="8"/></g>
-              <path class="s-far" d="M0 86L44 48 68 69 112 29 154 71 191 42 236 76 260 56 280 73V115H0Z"/>
-              <path class="s-near" d="M0 99L54 76 91 90 143 64 181 88 225 71 280 94V115H0Z"/>
-              <g class="s-glow"><rect x="108" y="21" width="4" height="4"/><rect x="124" y="13" width="4" height="4"/><rect x="235" y="26" width="4" height="4"/></g>
-              <g transform="translate(132 65)"><rect class="s-skin" x="8" y="0" width="16" height="8"/><rect class="s-near" x="4" y="8" width="24" height="16"/><rect class="s-skin" x="0" y="12" width="4" height="12"/><rect class="s-skin" x="28" y="12" width="4" height="12"/><rect class="s-glow" x="8" y="24" width="8" height="12"/><rect class="s-glow" x="20" y="24" width="8" height="12"/><rect class="s-ink" x="4" y="36" width="12" height="4"/><rect class="s-ink" x="20" y="36" width="12" height="4"/><rect class="s-sky" x="20" y="3" width="4" height="4"/></g>
-            </svg>
+            <figure class="portrait">
+              <img src="photo.jpg" width="560" height="560" alt="Portrait of Amir Hoseein smiling, standing under a street lamp with hanging plants at night" fetchpriority="high" decoding="async">
+              <span class="sprite" aria-hidden="true">
+                <svg viewBox="0 0 40 48" xmlns="http://www.w3.org/2000/svg"><rect class="s-sky" width="40" height="48"/><g transform="translate(4 4)"><rect class="s-skin" x="8" y="0" width="16" height="8"/><rect class="s-near" x="4" y="8" width="24" height="16"/><rect class="s-skin" x="0" y="12" width="4" height="12"/><rect class="s-skin" x="28" y="12" width="4" height="12"/><rect class="s-glow" x="8" y="24" width="8" height="12"/><rect class="s-glow" x="20" y="24" width="8" height="12"/><rect class="s-ink" x="4" y="36" width="12" height="4"/><rect class="s-ink" x="20" y="36" width="12" height="4"/><rect class="s-sky" x="20" y="3" width="4" height="4"/></g></svg>
+              </span>
+              <figcaption>Player 01 · Amir Hoseein</figcaption>
+            </figure>
             <div class="terminal" aria-hidden="true"><div><span class="prompt">&gt;</span> quest: make AI useful</div><div><span class="prompt">&gt;</span> skills: build · test · observe</div><div><span class="prompt">&gt;</span> status: <span class="value">exploring new ideas<span class="cursor">_</span></span></div></div>
             <ul class="focus-list">
               <li class="focus-item"><span class="focus-icon" aria-hidden="true">01</span> ML lifecycle engineering</li>
