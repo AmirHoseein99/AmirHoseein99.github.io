@@ -31,7 +31,6 @@
       root.classList.add("js");
 
       function stored() { try { var v = localStorage.getItem("theme"); return v === "light" || v === "dark" ? v : null; } catch (e) { return null; } }
-      function system() { return window.matchMedia && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"; }
 
       function apply(theme) {
         root.setAttribute("data-theme", theme);
@@ -44,7 +43,7 @@
         }
       }
 
-      apply(stored() || system());
+      apply(stored() || "light");
       document.addEventListener("DOMContentLoaded", function () { apply(root.getAttribute("data-theme")); });
 
       document.addEventListener("click", function (e) {
@@ -54,12 +53,6 @@
         try { localStorage.setItem("theme", next); } catch (err) {}
       });
 
-      /* follow OS changes only while the visitor has not chosen manually */
-      if (window.matchMedia) {
-        var mq = matchMedia("(prefers-color-scheme: dark)");
-        var onChange = function () { if (!stored()) apply(system()); };
-        if (mq.addEventListener) mq.addEventListener("change", onChange); else if (mq.addListener) mq.addListener(onChange);
-      }
     })();
   </script>
 
